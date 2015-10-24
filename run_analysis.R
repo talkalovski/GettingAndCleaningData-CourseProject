@@ -38,9 +38,10 @@ Finalset <- cbind("Activity" = Fullset[,"Activity"] , "subject" = Fullset[,"subj
 
 ## this part is using functions from the reshape2 package
 ## the first function is melt, used to define which of the dataset's columns are "id", and which are measure
-MeltSet <- melt(Finalset,id=c("Activity","subject"),measure.vars=c(names(Finalset[,3:68])))
+MeltSet <- melt(Finalset,id=c("Activity","subject"),measure.vars=c(names(Finalset[,3:81])))
 ## the second function is dcast, used to aplly a function to all the varibles along the defined "id" variable
 SetData <- dcast(MeltSet, Activity+subject ~ variable,mean)
 
 ##Last, I write the TidyDataSet into a Text File
 write.table(SetData, file = "TidyDataSet.txt", row.name=FALSE)
+
