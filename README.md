@@ -1,2 +1,5 @@
 # GettingAndCleaningData-CourseProject
-This repo is created to subbmit the Getting and cleaning data course Project
+## This file contains:
+  background
+  explenation about the data
+  explenation about the run_analysis.R in this repo
