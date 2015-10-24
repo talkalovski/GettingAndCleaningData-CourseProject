@@ -1,7 +1,6 @@
 # GettingAndCleaningData-CourseProject
 ## This file contains:
   - background
-  - explenation about the data
   - explenation about the run_analysis.R in this repo
 
 ## backround: 
@@ -49,8 +48,7 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
-## explanation about the data
-can be found in the code book in this repo
+Further explanation about the data can be found in the code book in this repo
 
 ## explenation about the run_analysis.R in this repo
 
