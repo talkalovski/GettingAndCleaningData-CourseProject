@@ -13,7 +13,7 @@ The final data set does not indicate the original group of the subject.
 
 ## The measure Variable.
 The origianl data contained 561 defernet measurments for each record
-The final data set was filtered to show only the 66 mean and standard deviation mesure varibales.
+The final data set was filtered to show only the 79 mean and standard deviation mesure varibales.
 Those varibles measured diferent acceleration of the subject waring the Samsung device.
 All those Varibles are numeric and and were normalized to a value between -1 to 1.
 
