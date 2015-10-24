@@ -1,4 +1,4 @@
-## This is my Rscript for the GettingAndCleaningData Course Project.
+## This is my R script for the GettingAndCleaningData Course Project.
 ## First of all you shuold make sure you have the Samsung data is in your working directory.
 
 ## activate those libraries that I will use in this R Script.
@@ -24,7 +24,7 @@ trainsubject <- read.table("train/subject_train.txt", header = FALSE, col.names 
 train <- cbind(trainsubject,trainLables,Rawtrain)
 
 ## Now I have two similar dataframes, one with test group data and the other with train group data
-## Next, I combin the two dataframes using rbid function
+## Next, I combine the two dataframes using rbind function
 Fullset <- rbind.data.frame(test,train) 
 
 ## To this conbined data frame I merge the Activity name based on the lable column.
@@ -34,12 +34,12 @@ Fullset <- merge(lablename,Fullset,by = "lable")
 meancol <- grepl( "mean" , names( Fullset))
 stdcol <-grepl( "std" , names( Fullset))
 Finalset <- cbind("Activity" = Fullset[,"Activity"] , "subject" = Fullset[,"subject"] , Fullset [,(meancol | stdcol)])
-## This Finalset dataframe contain only the mean and std mesurment
+## This Final set dataframe contain only the mean and std mesurment
 
 ## this part is using functions from the reshape2 package
-## the first function is melt, used to defined which of the dataset's columns are "id", and which are variables
+## the first function is melt, used to define which of the dataset's columns are "id", and which are measure
 MeltSet <- melt(Finalset,id=c("Activity","subject"),measure.vars=c(names(Finalset[,3:68])))
-## the second function is dcast, used to aplly a function to all the varibles along the defined "id" columns
+## the second function is dcast, used to aplly a function to all the varibles along the defined "id" variable
 SetData <- dcast(MeltSet, Activity+subject ~ variable,mean)
 
 ##Last, I write the TidyDataSet into a Text File
